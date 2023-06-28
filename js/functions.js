@@ -19,13 +19,12 @@ const reverseString = (string) => [...string].reverse().join('');
  */
 
 const isPalindrome = (string) => {
-	const normalizedString = string
-		.toLowerCase()
-		.replaceAll(' ', '');
-	return normalizedString === reverseString(normalizedString);
+  const normalizedString = string
+    .toLowerCase()
+    .replaceAll(' ', '');
+  return normalizedString === reverseString(normalizedString);
 };
 
-console.log(isPalindrome('Леша'));
 
 /**
  * Функция, которая принимает строку, извлекает содержащиеся в ней цифры от 0 до 9
@@ -33,9 +32,9 @@ console.log(isPalindrome('Леша'));
  * @returns {number} возвращает в виде целого положительного числа. Если в строке нет ни одной цифры, функция должна вернуть 'NaN'
  */
 const extractNumber = (input) => {
-	const stringWithOnlyDigits = String(input).replace(/\D/g, '');
+  const stringWithOnlyDigits = String(input).replace(/\D/g, '');
 
-	return parseInt(stringWithOnlyDigits,10);
+  return parseInt(stringWithOnlyDigits,10);
 };
 
 export {checkString, isPalindrome, extractNumber};
