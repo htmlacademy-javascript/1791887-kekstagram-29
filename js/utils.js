@@ -11,25 +11,22 @@ const getRandomInteger = (a, b) => {
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
 };
-
 /**
  * @param {Array<Type>} array
  * @returns случайный элемент массива
  */
 const getRandomArrayElement = (array) =>
   array[getRandomInteger(0, array.length - 1)];
-
 /**
  * Использует замыкание для генерации id
  * @returns генератор id
  */
 const createIdGenerator = () => {
   let lastGenerateId = 0;
-
   return () => {
     lastGenerateId += 1;
     return lastGenerateId;
   };
 };
 
-export {getRandomArrayElement, createIdGenerator};
+export {getRandomInteger, getRandomArrayElement, createIdGenerator};
