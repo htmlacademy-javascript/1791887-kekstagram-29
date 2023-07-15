@@ -57,7 +57,7 @@ const createPicture = (id) => ({
   description: getRandomArrayElement(DESCRIPTIONS),
   likes: getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT),
   comments: Array.from(
-    { length: getRandomInteger(0, COMMENT_COUNT) },
+    { length: getRandomInteger(4, COMMENT_COUNT) },
     createComment
   ),
 });
