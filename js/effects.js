@@ -136,4 +136,5 @@ effectsList.addEventListener('change', (evt) => {
   measure = '';
   onChangeSlider();
 });
+
 export {resetSlider};
