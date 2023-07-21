@@ -42,3 +42,5 @@ const setupThumbnails = (pictureData) => {
 const renderThumbnails = (pictures) => renderPack(container, pictures, setupThumbnails);
 
 renderThumbnails(photos);
+
+export {renderThumbnails};

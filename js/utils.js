@@ -56,4 +56,23 @@ const isEscapeKey = ({key}) => key === 'Escape';
  * @returns {HTMLElement}
  */
 const getTemplate = (id) => document.getElementById(id).content.firstElementChild;
-export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack};
+
+const showAlert = (message) => {
+  const alertContainer = document.createElement('div');
+  alertContainer.style.zIndex = '10';
+  alertContainer.style.position = 'absolute';
+  alertContainer.style.textAlign = 'center';
+  alertContainer.style.left = '0';
+  alertContainer.style.top = '0';
+  alertContainer.style.right = '0';
+  alertContainer.style.padding = '10px 5px';
+  alertContainer.style.fontSize = '30px';
+  alertContainer.style.backgroundColor = 'white';
+  alertContainer.style.color = 'red';
+
+  alertContainer.textContent = message;
+
+  document.body.append(alertContainer);
+};
+
+export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack, showAlert};

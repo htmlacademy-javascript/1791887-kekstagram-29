@@ -12,6 +12,7 @@ const resetScale = () => {
   imageUploadPreview.style.transform = `scale(${DEFAULT_SCALE / 100})`;
   inputValue.value = `${DEFAULT_SCALE}%`;
 };
+
 imageUploadPreview.style.transform = `scale(${DEFAULT_SCALE / 100})`;
 inputValue.value = `${DEFAULT_SCALE}%`;
 buttonScaleSmaller.addEventListener('click', (evt) =>{
@@ -23,6 +24,7 @@ buttonScaleSmaller.addEventListener('click', (evt) =>{
   inputValue.value = `${value}%`;
   imageUploadPreview.style.transform = `scale(${value / 100})`;
 });
+
 buttonScaleBigger.addEventListener('click', (evt) =>{
   evt.preventDefault();
   value += STEP_SCALE;
