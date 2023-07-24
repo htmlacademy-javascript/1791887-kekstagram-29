@@ -11,7 +11,12 @@ const cancelUpload = document.querySelector('#upload-cancel');
 const hashtagField = document.querySelector('.text__hashtags');
 const descriptionField = document.querySelector('.text__description');
 const imgInProcess = document.querySelector('.img-upload__effect-level');
+const submitButtonSwitch = document.querySelector('.img-upload__submit');
 const HASHTAG_PATTERN = /^#[a-zа-яё0-9]{1,19}$/i;
+const SubmitButtonText = {
+  IDLE: 'Опубликовать',
+  SENDING: 'Публикую...'
+};
 const MAX_COMMENT_LENGTH = 140;
 const MAX_NUMBER_HASHTAG = 5;
 
@@ -73,6 +78,28 @@ function validateHashtagDouble () {
   return isHashtagsDuplicate.size === hashtags.length;
 }
 
+const blockSubmitButton = () => {
+  submitButtonSwitch.disabled = true;
+  submitButtonSwitch.textContent = SubmitButtonText.SENDING;
+};
+
+const unblockSubmitButton = () => {
+  submitButtonSwitch.disabled = false;
+  submitButtonSwitch.textContent = SubmitButtonText.IDLE;
+};
+
+const setFormSubmit = (callback) => {
+  imageUploadForm.addEventListener('submit', async(evt) => {
+    evt.preventDefault();
+    const isValid = pristine.validate();
+
+    if (isValid) {
+      blockSubmitButton();
+      callback(new FormData(imageUploadForm));
+    }
+  });
+};
+
 const setupFormValidation = () => {
   pristine.addValidator(descriptionField, validateCommentInput, 'Допустимое количество знаков не больше 140!');
   pristine.addValidator(hashtagField, validateHashtagFormatInput, 'Неправильный формат хэштэга');
@@ -97,4 +124,4 @@ const setupFormValidation = () => {
   });
 };
 
-export {setupFormValidation};
+export {setupFormValidation, unblockSubmitButton, setFormSubmit};
