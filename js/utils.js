@@ -75,4 +75,13 @@ const showAlert = (message) => {
   document.body.append(alertContainer);
 };
 
-export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack, showAlert};
+const debounce = (callback, timeoutDelay = 500) => {
+  let timeoutId;
+
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+};
+
+export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack, showAlert, debounce};
