@@ -12,7 +12,7 @@ const container = document.querySelector('.pictures');
 const onThumbnailClick = (evt) => {
   evt.preventDefault();
   const thumbnail = evt.currentTarget;
-  const id = +thumbnail.dataset.thumbnailId;
+  const id = +thumbnail.dataset.thumbnailId + 1;
   const picture = getPhotoById(id);
 
   showBigPicture(picture);

@@ -1,4 +1,4 @@
-import {renderThumbnails} from './thumbnail.js';
+//import {renderThumbnails} from './thumbnail.js';
 import {setupFormValidation, unblockSubmitButton, setFormSubmit} from './form.js';
 import './scale.js';
 import './effects.js';
@@ -23,7 +23,7 @@ setFormSubmit(async (data) => {
 
 try {
   const data = await getData();
-  renderThumbnails(data);
+  //renderThumbnails(data);
   showFilters();
   previewPicture();
   setDebouncedSort(data);
