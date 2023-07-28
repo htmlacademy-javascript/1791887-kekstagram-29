@@ -12,7 +12,6 @@ const randomFilter = document.querySelector('#filter-random');
 const filterMostDiscussed = document.querySelector('#filter-discussed');
 
 const filterPictures = (pictures, sortButton) => {
-
   if (sortButton === filterDefault) {
     return pictures;
   }
@@ -40,7 +39,7 @@ const setOnFilterClick = (evt, pictures) => {
 
   removePictures(thumbnails);
 
-  renderThumbnails (filterPictures(pictures, filterButton));
+  renderThumbnails(filterPictures(pictures, filterButton));
 };
 
 const setDebouncedSort = (pictures) => {

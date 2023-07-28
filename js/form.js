@@ -27,8 +27,15 @@ const pristine = new Pristine(imageUploadForm, {
 });
 
 const closeUploadPhoto = () => {
-  imageUpload.classList.add('hidden');
-  document.body.classList.remove('modal-open');
+  const errorContainer = document.querySelector('.error');
+
+  if (errorContainer && !errorContainer.className.includes('hidden')) {
+    document.querySelector('.error').classList.add('hidden');
+  } else {
+    imageUpload.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+  }
+
   document.removeEventListener('keydown', onDocumentKeydown);
   imageUploadForm.reset();
   pristine.reset();
@@ -74,7 +81,8 @@ function validateHashtagCountInput () {
 }
 function validateHashtagDouble () {
   const hashtags = getHashtags();
-  const isHashtagsDuplicate = new Set(hashtags);
+  const lowerCaseArr = hashtags.map((word) => word.toLowerCase());
+  const isHashtagsDuplicate = new Set(lowerCaseArr);
   return isHashtagsDuplicate.size === hashtags.length;
 }
 
