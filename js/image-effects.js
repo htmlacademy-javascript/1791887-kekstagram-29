@@ -1,4 +1,4 @@
-import {imageUploadForm, imageUploadPreview } from './scale.js';
+import {imageUploadForm, imageUploadPreview } from './image-scale.js';
 
 const SLIDER_PREFERENCE = [ {
   range: {

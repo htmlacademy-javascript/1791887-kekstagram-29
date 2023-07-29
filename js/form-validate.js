@@ -1,5 +1,5 @@
-import {resetScale} from './scale.js';
-import {resetSlider} from './effects.js';
+import {resetScale} from './image-scale.js';
+import {resetSlider} from './image-effects.js';
 import {showSuccessMessage, showErrorMessage} from './message.js';
 import {sendData} from './api.js';
 import {isEscapeKey} from './utils.js';

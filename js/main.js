@@ -1,10 +1,10 @@
-import {setupFormValidation, unblockSubmitButton, setFormSubmit} from './form.js';
-import './scale.js';
-import './effects.js';
+import {setupFormValidation, unblockSubmitButton, setFormSubmit} from './form-validate.js';
+import './image-scale.js';
+import './image-effects.js';
 import { showAlert} from './utils.js';
 import { getData, sendData} from './api.js';
-import { showFilters, setDebouncedSort } from './filters.js';
-import { previewPicture } from './upload.js';
+import { showFilters, setDebouncedSort } from './gallery-filters.js';
+import { previewPicture } from './user-upload.js';
 import {showSuccessMessage, showErrorMessage} from './message.js';
 
 setupFormValidation();
