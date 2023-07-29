@@ -6,7 +6,7 @@ const commentList = document.querySelector('.social__comments');
 const commentsCount = document.querySelector('.social__comment-count');
 const loadButton = document.querySelector('.social__comments-loader');
 
-let savedComment = [];
+let savedComments = [];
 
 
 const renderComment = (comment) => {
@@ -17,14 +17,14 @@ const renderComment = (comment) => {
 };
 
 const onLoadButtonClick = () => {
-  const allCommentsAmount = savedComment.length;
+  const allCommentsAmount = savedComments.length;
   const showedAmount = commentList.children.length;
   let endOfSlice = showedAmount + COMMENTS_PACK_SIZE;
   const allCommentsShow = endOfSlice >= allCommentsAmount;
 
   endOfSlice = allCommentsShow ? allCommentsAmount : endOfSlice;
 
-  const slicedComments = savedComment.slice(showedAmount, endOfSlice);
+  const slicedComments = savedComments.slice(showedAmount, endOfSlice);
 
   renderPack(commentList, slicedComments, renderComment);
 
@@ -36,13 +36,13 @@ const onLoadButtonClick = () => {
 loadButton.addEventListener('click', onLoadButtonClick);
 
 const renderComments = (comments) => {
-  savedComment = comments;
+  savedComments = comments;
   loadButton.click();
 };
 
 const clearComments = () => {
   commentList.innerHTML = '';
-  savedComment = [];
+  savedComments = [];
 };
 
 export {renderComments, clearComments};
