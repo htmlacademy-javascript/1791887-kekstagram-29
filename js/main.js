@@ -3,7 +3,7 @@ import './image-scale.js';
 import './image-effects.js';
 import { showAlert} from './utils.js';
 import { getData, sendData} from './api.js';
-import { showFilters, setDebouncedSort } from './gallery-filters.js';
+import { showFilters, setDebouncedSort } from './pictures-filters.js';
 import { previewPicture } from './user-upload.js';
 import {showSuccessMessage, showErrorMessage} from './message.js';
 
